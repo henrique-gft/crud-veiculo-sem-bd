@@ -41,7 +41,14 @@ public class VeiculoController {
 	public String buscaPorPlaca(@PathVariable String placa) {
 		
 		System.out.println(dao.buscar(placa));
-		
 		return "redirect:/cadastro";
 	}
+	
+	@RequestMapping("/excluir/{placa}")
+	public String excluir(@PathVariable String placa) {
+		
+		System.out.println(dao.excluir(placa));
+		return "redirect:/cadastro";
+	}
+	
 }

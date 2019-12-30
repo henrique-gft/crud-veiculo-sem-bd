@@ -39,4 +39,21 @@ public class veiculoDao {
 		}
 	}
 	
+	public String excluir(String placa){
+		
+		if (this.listaVeiculos.size() > 0) {
+			for (int i = 0; i < listaVeiculos.size(); i++) {
+				
+				if (this.listaVeiculos.get(i).getPlaca().equals(placa)) {
+					listaVeiculos.remove(i);
+					return "Removido com sucesso";
+				}
+			}
+		}else {
+			return "Impossivel excluir um item de uma lista vazia";
+		}
+			
+		return "Carro nao encontrado";
+	}
+	
 }
